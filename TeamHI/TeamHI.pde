@@ -1,3 +1,5 @@
+color f=color(225,225,0);
+
 ArrayList<int[]> pixs = new ArrayList<int[]>();
 //Sketch --> import library  Add library --> Video| Gstreamer
 import processing.video.*;
@@ -33,10 +35,8 @@ void setup() {
 
 void checkBlue() {
   //int counter = 0;
-  color f ;
   for (int x =0; x<cam.width; x++) {
     for (int y = 0; y < cam.height; y++) {
-      f=color(225,225,0);
       //if (blue(cam.get(x,y)) < 250){ 
       if (blue(cam.get(x, y)) > 150 && blue(cam.get(x, y)) > 1.5*red(cam.get(x, y)) && blue(cam.get(x, y)) > 1.5*green(cam.get(x, y))) { 
 
@@ -68,6 +68,19 @@ void setDrawing() {
   for (int i = 0; i < pixs.size(); i++){
      cam.set(pixs.get(i)[0], pixs.get(i)[1], color(pixs.get(i)[2],pixs.get(i)[3],pixs.get(i)[4]));  
   }
+}
+  
+void clear(){
+   for (int i = pixs.size()-1; i >=0; i--){
+      pixs.remove(i); 
+   }
+}
+
+void setColor(){
+}
+
+void mousePressed(){
+  clear();
 }
 
 void draw() {
