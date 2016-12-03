@@ -20,12 +20,11 @@ void setup(){
     // element from the array returned by list():
     cam = new Capture(this, cameras[0]);
     cam.start();     
-  }
-  
-  
+  } 
 }
 
 void draw(){
     if (cam.available() == true) {
-    cam.read();
+      cam.read();
+    }
 }
