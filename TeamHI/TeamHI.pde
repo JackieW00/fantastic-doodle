@@ -1,4 +1,4 @@
-color f=color(225,225,0);
+color f=color(225,225,225);
 
 ArrayList<int[]> pixs = new ArrayList<int[]>();
 //Sketch --> import library  Add library --> Video| Gstreamer
@@ -77,7 +77,41 @@ void clear(){
 }
 
 void setColor(){
+  if (key == '1'){
+      f=color(225,0,0);
+  }
+  if (key == '2'){
+      f=color(0,225,0);
+  } 
+  
+  if (key =='3'){
+      f=color(0,0,225);
+  }
+  if (key =='4'){
+      f=color(225,225,0);
+  }
+  if (key =='5'){
+      f=color(225,0,225);
+  }
+  if (key =='6'){
+      f=color(0,225,225);
+  }
+  if (key =='7'){
+      f=color(255,120,0);
+  }
+  if (key =='8'){
+      f=color(150,150,150);
+  }
+  if (key =='9'){
+      f=color(0,0,0);
+  }
+  if (key =='0'){
+      f=color(255,255,255);
+  }
+  
+  
 }
+
 
 void mousePressed(){
   clear();
@@ -87,6 +121,11 @@ void draw() {
   if (cam.available() == true) {
     cam.read();
   }
+  print(key);
+  if (keyPressed) {
+    setColor();
+  }
+  
 
   checkBlue(); 
   setDrawing();
