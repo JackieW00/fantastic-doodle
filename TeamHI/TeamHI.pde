@@ -38,16 +38,10 @@ void checkBlue() {
   for (int x =0; x<cam.width; x++) {
     for (int y = 0; y < cam.height; y++) {
       //if (blue(cam.get(x,y)) < 250){ 
-      if (blue(cam.get(x, y)) > 150 && blue(cam.get(x, y)) > 1.5*red(cam.get(x, y)) && blue(cam.get(x, y)) > 1.5*green(cam.get(x, y))) { 
+      color camColor = cam.get(x, y);
+      if (blue(camColor) > 120 && blue(camColor) > 1.2*red(camColor) && blue(camColor) > 1.2*green(camColor)) { 
 
-        /*for (int xlen =-1; xlen < 1; x++) {
-         for (int ylen = -1; ylen < 1; y++) {
-         if (blue(cam.get(x+xlen, y+ylen))>200 && red(cam.get(x+xlen, y+ylen))>200 && green(cam.get(x+xlen, y+ylen)) >200) {
-         counter+=1;
-         }
-         }
-         }
-         if (counter>20) {*/
+
         int[] a = new int[5];
         a[0] = x;
         a[1] = y;
