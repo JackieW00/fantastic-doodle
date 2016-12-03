@@ -39,7 +39,7 @@ void checkBlue() {
     for (int y = 0; y < cam.height; y++) {
       //if (blue(cam.get(x,y)) < 250){ 
       color camColor = cam.get(x, y);
-     if (blue(camColor) > 120 && blue(camColor) > 1.8*red(camColor) && blue(camColor) > 1.8*green(camColor)) { 
+     if (blue(camColor) > 120 && blue(camColor) > 1.7*red(camColor) && blue(camColor) > 1.7*green(camColor)) { 
         int[] a = new int[5];
         a[0] = x;
         a[1] = y;
