@@ -1,6 +1,6 @@
 //Sketch --> import library  Add library --> Video| Gstreamer
 import processing.video.*;
-
+import blobscanner.*;
 
 Capture cam;
 PImage orig;
@@ -21,7 +21,7 @@ void setup() {
     
     // The camera can be initialized directly using an 
     // element from the array returned by list():
-    cam = new Capture(this, cameras[11]);
+    cam = new Capture(this, cameras[0]);
     cam.start();     
   }      
 }
@@ -45,7 +45,6 @@ void grayscale(){
 void draw() {
   if (cam.available() == true) {
     cam.read();
-
   }
     scale(-1, 1);
     image(cam, 0, 0, -cam.width, cam.height);
