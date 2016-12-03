@@ -26,6 +26,21 @@ void setup() {
   }      
 }
 
+void grayscale(){
+  for (int x = 0; x < cam.width; x++){
+    for (int y = 0; y < cam.height; y++){
+        color c = cam.get(x, y);
+  
+        float r = red(c);
+        float g = green(c);
+        float b = blue(c);
+  
+        color newColor = color((r+g+b)/3);
+  
+        set( x, y, newColor);
+    }
+  }
+}
 
 void draw() {
   if (cam.available() == true) {
@@ -34,4 +49,5 @@ void draw() {
   }
     scale(-1, 1);
     image(cam, 0, 0, -cam.width, cam.height);
+    grayscale();
 } 
