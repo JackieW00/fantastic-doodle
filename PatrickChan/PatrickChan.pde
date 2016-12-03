@@ -1,3 +1,7 @@
+import processing.video.*;
+Capture cam;
+PImage orig;
+
 void setup(){
   size(1280, 720);
   
