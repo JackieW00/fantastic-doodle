@@ -1,11 +1,14 @@
+//Sketch --> import library  Add library --> Video| Gstreamer
 import processing.video.*;
+
+
 Capture cam;
 PImage orig;
 
-void setup(){
+void setup() {
   size(1280, 720);
-  
-   String[] cameras = Capture.list();
+
+  String[] cameras = Capture.list();
   
   if (cameras.length == 0) {
     println("There are no cameras available for capture.");
@@ -20,11 +23,15 @@ void setup(){
     // element from the array returned by list():
     cam = new Capture(this, cameras[0]);
     cam.start();     
-  } 
+  }      
 }
 
-void draw(){
-    if (cam.available() == true) {
-      cam.read();
-    }
-}
+
+void draw() {
+  if (cam.available() == true) {
+    cam.read();
+
+  }
+    scale(-1, 1);
+    image(cam, 0, 0, -cam.width, cam.height);
+} 
