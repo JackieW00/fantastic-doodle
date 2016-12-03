@@ -1,9 +1,14 @@
+
 //Sketch --> import library  Add library --> Video| Gstreamer
 import processing.video.*;
+
+// Download blobscanner.zip from (https://sites.google.com/site/blobscanner/Download)
+// Move folder from downloads to processing library folder
 import blobscanner.*;
 
 Capture cam;
 PImage orig;
+
 
 void setup() {
   size(1280, 720);
@@ -26,6 +31,7 @@ void setup() {
   }      
 }
 
+/*
 void grayscale(){
   for (int x = 0; x < cam.width; x++){
     for (int y = 0; y < cam.height; y++){
@@ -41,12 +47,15 @@ void grayscale(){
     }
   }
 }
+*/
 
 void draw() {
   if (cam.available() == true) {
     cam.read();
   }
+  
+  
     scale(-1, 1);
     image(cam, 0, 0, -cam.width, cam.height);
-    grayscale();
+    //grayscale();
 } 
