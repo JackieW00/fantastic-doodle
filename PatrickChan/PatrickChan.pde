@@ -21,7 +21,7 @@ void setup() {
     
     // The camera can be initialized directly using an 
     // element from the array returned by list():
-    cam = new Capture(this, cameras[0]);
+    cam = new Capture(this, cameras[11]);
     cam.start();     
   }      
 }
@@ -37,7 +37,7 @@ void grayscale(){
   
         color newColor = color((r+g+b)/3);
   
-        set( x, y, newColor);
+        set( cam.width-x, y, newColor);
     }
   }
 }
